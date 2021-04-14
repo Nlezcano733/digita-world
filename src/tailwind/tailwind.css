@@ -1,0 +1,18 @@
+/* ./src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&family=Zen+Dots&display=swap');
+
+@tailwind base;
+
+@layer base{
+    h1{ @apply text-2xl font-extrabold; }
+    h2{ @apply text-xl font-bold; }
+    h3{ @apply text-lg font-bold;}
+    h4{ @apply text-base font-semibold; }
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+@tailwind screens;
