@@ -1,6 +1,6 @@
 import './navbar.css';
 
-function NavBar (){
+export const NavBar = () => {
     return (
         <div className="">
             <header className=" flex justify-between layout">
@@ -21,5 +21,3 @@ function NavBar (){
         </div>
     )
 }
-
-export default NavBar;
