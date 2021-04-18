@@ -1,18 +1,21 @@
-.layout{
-    @apply h-12 px-6 md:h-14 md:px-8 lg:h-16 lg:px-12;
-    @apply bg-gradient-to-l from-blue-500 to-blue-900 shadow-sm;
+.nav{
+    @apply flex flex-row justify-between items-center py-container;
+    @apply w-full h-12 px-6 lg:h-16;
+    @apply bg-gradient-to-l from-blue-500 to-blue-900;
 }
 
-.logo {
-    @apply mt-3 text-lg md:mt-4 md:text-2xl md:tracking-wide lg:text-3xl;
+.nav-logo {
+    @apply text-lg md:text-2xl md:tracking-wide lg:text-3xl;
     @apply text-olive-normal font-zen font-semibold uppercase;
 }
 
-.enlaces {
-    @apply mx-5 text-white transition-all duration-200 hover:text-olive-light;
+.nav-menu{
+    @apply  hidden sm:flex sm:justify-between sm:items-center;
 }
 
-.menu-burguer {
-    @apply my-auto text-3xl text-white  ;
+.nav-enlace {
+    @apply px-1 mx-3 md:mx-4 text-white transition-all duration-200;
 }
-
+.nav-enlace:hover {
+    @apply text-olive-light;
+}
