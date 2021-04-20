@@ -1,20 +1,28 @@
 .nav{
-    @apply flex flex-row justify-between items-center py-container;
-    @apply w-full h-12 px-6 lg:h-16;
+    @apply flex justify-between items-center;
+    @apply w-full;
+    @apply h-12 lg:h-16;
+    @apply px-container py-0;
     @apply bg-gradient-to-l from-blue-500 to-blue-900;
+    z-index: 10;
 }
 
 .nav-logo {
-    @apply text-lg md:text-2xl md:tracking-wide lg:text-3xl;
-    @apply text-olive-normal font-zen font-semibold uppercase;
+    @apply text-lg md:text-2xl lg:text-3xl;
+    @apply text-olive-normal;
+    @apply font-zen font-semibold;
+    @apply uppercase md:tracking-wide;
 }
 
 .nav-menu{
-    @apply  hidden sm:flex sm:justify-between sm:items-center;
+    @apply  hidden md:flex md:justify-between md:items-center;
 }
 
 .nav-enlace {
-    @apply px-1 mx-3 md:mx-4 text-white transition-all duration-200;
+    @apply px-1;
+    @apply mx-3 md:mx-4;
+    @apply text-white;
+    @apply transition-all duration-200;
 }
 .nav-enlace:hover {
     @apply text-olive-light;

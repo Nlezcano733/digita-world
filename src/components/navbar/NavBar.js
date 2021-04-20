@@ -9,14 +9,14 @@ export const NavBar = () => {
             <h1 className=" nav-logo">
                 Digital World
             </h1>
-            <nav>
+            <div>
                 < MenuBurger />
-                <ul className="nav-menu">
-                    <li className=" nav-enlace "><a href="">Nosotros</a></li>
-                    <li className=" nav-enlace "><a href="">Contacto</a></li>
+                <nav className="nav-menu">
+                    <a className=" nav-enlace " href="">Nosotros</a>
+                    <a className=" nav-enlace " href="">Contacto</a>
                     < CartWidget />
-                </ul>
-            </nav>
+                </nav>
+            </div>
         </div>
     )
 }

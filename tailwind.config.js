@@ -1,16 +1,15 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   corePlugins: {
     container: false,
   },
   theme: {
     screens: {
       'sm': '500px',
-      'md': '750px',
-      'lg': '950px',
+      'md': '700px',
+      'lg': '900px',
       'xl': '1200px',
-      '2xl': '1500px'
     },
     extend: {
       spacing:{
@@ -27,6 +26,13 @@ module.exports = {
           normal: '#98ca3f',
           dark: '#729a2b',
           darker: '#4b651c',
+        },
+        night:{
+          lighter: '#273a47',
+          light: '#21313c',
+          normal: '#1b2831',
+          dark: '#0f161b',
+          darker: '#090d10',
         }
       },
       boxShadow: {

@@ -1,7 +1,7 @@
-body{
+.app{
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin: 0px;
-    padding: 0px;
     background-color: #fafafa;
+    @apply dark:bg-night-normal;
+    z-index: -10;
 }

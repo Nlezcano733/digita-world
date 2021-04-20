@@ -8,6 +8,9 @@
     :root {
         --grid-container: repeat(4, minmax(0, 1fr));
         --spacing-container: 10px;
+        --max-container: 450px;
+        --reduccion-container: 5px;
+        --gap-container: 10px;
     }
     h1{ @apply text-2xl font-bold; }
     h2{ @apply text-xl font-bold; }
@@ -17,19 +20,36 @@
     @screen sm {
         :root{
             --grid-container: repeat(6, minmax(0, 1fr));
-            --spacing-container: 15px;
+            --spacing-container: 20px;
+            --max-container: 630px;
+            --reduccion-container: 10px;
+            --gap-container: 15px;
         }
     }
     @screen md {
         :root{
             --grid-container: repeat(8, minmax(0, 1fr));
-            --spacing-container: 20px;
+            --spacing-container: 30px;
+            --max-container: 810px;
+            --reduccion-container: 15px;
+            --gap-container: 20px;
         }
     }
     @screen lg {
         :root{
             --grid-container: repeat(12, minmax(0, 1fr));
-            --spacing-container: 30px;
+            --spacing-container: 45px;
+            --max-container: 1090px;
+            --reduccion-container: 20px;
+            --gap-container: 30px;
+        }
+    }
+    @screen xl {
+        :root{
+            --spacing-container: 60px;
+            --max-container: 1400px;
+            --reduccion-container: 30px;
+            --gap-container: 40px;
         }
     }
 }
@@ -41,28 +61,36 @@
         .container {
             @apply grid gap-container w-full mx-auto;
             grid-template-columns: var(--grid-container);
+            grid-gap: var(--gap-container);
 
             padding-left: var(--spacing-container);
             padding-right: var(--spacing-container);
-            max-width: calc(100vw - var(--container-padding));
+            min-width: calc(100vw - var(--container-padding));
+            max-width: var(--max-container);
         }
 
         .container-sm{
             @apply grid gap-container w-full mx-auto;
             grid-template-columns: var(--grid-container);
+            grid-column-gap: calc(var(--gap-container) * 1.25);
+            grid-row-gap: var(--gap-container);
 
             padding-left: calc(var(--spacing-container) * 1.5);
             padding-right: calc(var(--spacing-container) * 1.5);
-            max-width: calc(100vw - (var(--container-padding) * 1.5));
+            min-width: calc(100vw - (var(--container-padding) * 1.5));
+            max-width: calc(var(--max-container) - var(--reduccion-container));
         }
 
         .container-xs{
             @apply grid gap-container w-full mx-auto;
             grid-template-columns: var(--grid-container);
+            grid-column-gap: calc(var(--gap-container) * 1.5);
+            grid-row-gap: var(--gap-container);
 
             padding-left: calc(var(--spacing-container) * 2);
             padding-right: calc(var(--spacing-container) * 2);
-            max-width: calc(100vw - (var(--container-padding) * 2));
+            min-width: calc(100vw - (var(--container-padding) * 2));
+            max-width: calc(var(--max-container) - (var(--reduccion-container) * 1.5));
         }
 
         .col-1 { @apply col-span-1; }
@@ -107,7 +135,7 @@
         @apply col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-4;
     }
     .col-four { 
-        @apply col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-3;
+        @apply col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-4 xl:col-span-3;
     }
 
 }
