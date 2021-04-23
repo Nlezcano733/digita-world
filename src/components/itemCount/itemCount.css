@@ -1,0 +1,26 @@
+.contador {
+    @apply flex justify-around items-center;
+    @apply w-10/12 h-10;
+    @apply mx-auto mb-3;
+    @apply border-2 border-blue-400 rounded-lg;
+}
+
+.contador input {
+  @apply px-4 pb-1;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contador input:active {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.contador input:disabled {
+  color: #b9b9b9;
+}

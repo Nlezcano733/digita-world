@@ -16,7 +16,9 @@
 .sidebar-exit {
     width: fit-content;
     margin-left: auto;
-    @apply px-2 py-1 mt-1 mr-6 text-white text-3xl;
+    @apply px-2 py-1;
+    @apply mt-1 mr-6;
+    @apply text-white text-3xl;
 }
 
 .sidebar-nav{
