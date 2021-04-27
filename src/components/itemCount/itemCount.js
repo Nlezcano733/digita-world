@@ -12,7 +12,7 @@ export const ItemCount = ({stock, initial}) =>{
         if(type == 'add'){
             if(amount < stock){
                 setamount(parseInt(amount) + 1);
-                setStockRestante(parseInt(stockRestante) - 1);
+                setStockRestante((stockRestante) - 1);
                 e.target.style.color = "#333333";
             }
             if(amount == stock -1){
@@ -24,7 +24,7 @@ export const ItemCount = ({stock, initial}) =>{
         if(type == 'sub'){
             if(amount > initial){
                 setamount(parseInt(amount) - 1 );
-                setStockRestante(parseInt(stockRestante) + 1);
+                setStockRestante((stockRestante) + 1);
                 e.target.style.color = "#333333";
             }
             if(amount == stock -1){
@@ -36,13 +36,13 @@ export const ItemCount = ({stock, initial}) =>{
     }
 
     return (
-    <div>
+    <div className="">
       <div className="contador">
         <input type="button" value="-" onClick={(e) =>HandleClick (e, {type: 'sub'}) } />
         <p>{amount}</p>
         <input type="button" value="+" onClick={(e) =>HandleClick (e, {type: 'add'}) } />
       </div>
-      <p className="text-center my-4">Stock Restante: {stockRestante}</p>
+      <p className="contador-stock text-center">Stock Restante: {stockRestante}</p>
     </div>
   );
 }

@@ -1,16 +1,12 @@
 import React from 'react';
-import { ItemCount } from '../itemCount/itemCount';
-
+import { ItemList } from '../itemList/itemList';
 import './itemListContainer.css';
 
-export const ItemListContainer = (props) =>{
+export const ItemListContainer = () =>{
     return (
-        <div className="container mt-4 mb-20">
-            <div className="col-four card">
-                <div className="py-8 h-full bg-gray-400 rounded-lg text-center">inserte imagen</div>
-                <h2 className="text-center mt-4">{props.title}</h2>
-                < ItemCount initial="1" stock="5"/>
-            </div>
+        <div className="item-container">
+            <h2 className="item-container__title">Busca tus juegos favoritos</h2>
+            < ItemList />
         </div>
     )
 }

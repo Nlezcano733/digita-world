@@ -1,0 +1,9 @@
+footer{
+    @apply h-10;
+    @apply text-center;
+    @apply bg-blue-500 text-white;
+}
+
+.footer-info{
+    padding-top: 10px;
+}

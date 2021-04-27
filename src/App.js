@@ -3,6 +3,7 @@ import React from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { Banner } from "./components/banner/banner";
 import { ItemListContainer } from "./components/itemListContainer/itemListContainer";
+import { Footer } from './components/footer/footer'
 
 import "./assets/css/layout-index.css";
 
@@ -22,7 +23,8 @@ export const App = () => {
     <div className="app">
       <NavBar />
       <Banner greeting="Los mejores juegos, todas las plataformas, un solo lugar." />
-      <ItemListContainer title="Tarjeta de producto" />
+      <ItemListContainer/>
+      <Footer />
     </div>
   );
 };
