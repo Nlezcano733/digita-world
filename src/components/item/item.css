@@ -17,10 +17,13 @@
     @apply w-full h-full;
     grid-row: span 3;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .img-cover {
     height: 100%;
+    width: auto;
 }
 
 .title {
@@ -40,6 +43,10 @@
         @apply h-72;
         grid-template-columns: 1fr;
         grid-template-rows: 80px 1fr 1fr 2fr;
+    }
+    .img-cover {
+        width: 100%;
+        height: auto;
     }
 }
 

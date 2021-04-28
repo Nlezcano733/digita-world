@@ -5,7 +5,7 @@
       "description":
         "Combinando realidad con ficción, Call of Duty es un juego unico por su calidad de desarrollo. Su objetivo es que cada jugador logre conquistar todas las misiones, ya sea en una batalla contra otros ejércitos o combatiendo contra zombies",
       "price": "$4500",
-      "picture": "../src/assets/img/cover/call-of-duty.jpg",
+      "picture": "./img/cover/call-of-duty.jpg",
       "gender": "Shooter",
       "stock": 12
     },
@@ -15,7 +15,7 @@
       "description":
         "Escapa del caos de Raccoon City con Jill Valentine. Resident Evil 3: Nemesis ha sido rediseñado con graficos y jugabilidad de última generación",
       "price": "$2200",
-      "picture": "../../assets/img/cover/resident-evil.jpg",
+      "picture": "./img/cover/resident-evil.jpg",
       "gender": "Acción",
       "stock": 18
     },
@@ -25,7 +25,7 @@
       "description":
         "Vas a poder jugar con tus equipos y futbolistas preferidos en diversos modos. ¡Preparate para convertirte en campeón de todas las copas y torneos!",
       "price": "$2350",
-      "picture": "../../assets/img/cover/fifa21.png",
+      "picture": "./img/cover/fifa21.png",
       "gender": "Deportes",
       "stock": 10
     },
@@ -35,7 +35,7 @@
       "description":
         "Descubre un mundo en constante evolución repleto de opciones y formas de jugar mientras llegas a lo más alto del escalafón criminal de Los Santos y el condado de Blaine",
       "price": "$1600",
-      "picture": "../../assets/img/cover/gta.jpg",
+      "picture": "./img/cover/gta.jpg",
       "gender": "Acción",
       "stock": 6
     },
@@ -45,7 +45,7 @@
       "description":
         "Fortnite es un mundo de experiencias múltiples. Dejate caer en la isla y compite hasta ser el último jugador (o equipo) que queden en pie.",
       "price": "$2000",
-      "picture": "../../assets/img/cover/fortnite.jpg",
+      "picture": "./img/cover/fortnite.jpg",
       "gender": "Shooter",
       "stock": 3
     },
@@ -55,7 +55,7 @@
       "description":
         "Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora en los dominios de las deidades y los monstruos nórdicos.",
       "price": "$1200",
-      "picture": "../../assets/img/cover/gow.jpg",
+      "picture": "./img/cover/gow.jpg",
       "gender": "Acción",
       "stock": 16
     },
@@ -65,7 +65,7 @@
       "description":
         "Con este juego de NBA 2K vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": "$2350",
-      "picture": "../../assets/img/cover/nba-2k21.png",
+      "picture": "./img/cover/nba-2k21.png",
       "gender": "Deportes",
       "stock": 10
     },
@@ -75,7 +75,7 @@
       "description":
         "Minecraft es un videojuego líder dentro del género de la aventura y la acción, donde quien juega puede elegir entre supervivencia, creatividad y dificultad extrema.",
       "price": "$1200",
-      "picture": "../../assets/img/cover/minecraft.jpg",
+      "picture": "./img/cover/minecraft.jpg",
       "gender": "Aventura",
       "stock": 7
     },
@@ -85,7 +85,7 @@
       "description":
         "Combinando realidad con ficción, Call of Duty es un juego unico por su calidad de desarrollo. Su objetivo es que cada jugador logre conquistar todas las missones, ya sea en una batalla contra otros ejércitos o combatiendo contra zombies",
       "price": "$2400",
-      "picture": "../../assets/img/cover/spiderman.jpg",
+      "picture": "./img/cover/spiderman.jpg",
       "gender": "Aventura",
       "stock": 15
     },
@@ -95,7 +95,7 @@
       "description":
         "Prepárate para los característicos escenarios llenos de acción y una narrativa cautivadora de la mano de Uncharted: The lost legacy.",
       "price": "$2000",
-      "picture": "../../assets/img/cover/uncharted.jpg",
+      "picture": "./img/cover/uncharted.jpg",
       "gender": "Aventura",
       "stock": 18
     },
@@ -105,7 +105,7 @@
       "description":
         "Vive el pasado. Lucha por el futuro. Descubre cómo los héroes marcaron la historia y lánzate a otro viaje por los Archivos de Overwatch.",
       "price": "$1000",
-      "picture": "../../assets/img/cover/overwatch.jpg",
+      "picture": "./img/cover/overwatch.jpg",
       "gender": "Shooter",
       "stock": 20
     },
@@ -115,7 +115,7 @@
       "description":
         "En un mundo hostil y pospandémico, las circunstancias desesperadas acaban juntando a Ellie y a Joel, que deben confiar el uno en el otro para sobrevivir en un viaje brutal por lo que queda de Estados Unidos.",
       "price": "$3000",
-      "picture": "../../assets/img/cover/last-of-us.jpg",
+      "picture": "./img/cover/last-of-us.png",
       "gender": "Acción",
       "stock": 15
     }
