@@ -1,6 +1,6 @@
 import React from 'react';
-import { CartWidget } from '../cartWidget/cartWidget';
-import { MenuBurger } from '../menu-burger/menuBurger'
+import { CartWidget } from './cartWidget/cartWidget';
+import { MenuBurger } from './menu-burger/menuBurger'
 import './navbar.css';
 
 export const NavBar = () => {
