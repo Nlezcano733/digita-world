@@ -138,6 +138,10 @@
         @apply col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-4 xl:col-span-3;
     }
 
+    .btn {
+        padding: 5px 10px;
+    }
+
 }
 
 @tailwind utilities;

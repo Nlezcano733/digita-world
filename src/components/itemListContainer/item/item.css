@@ -13,7 +13,7 @@
 }
 
 .img-container{
-    background-color: grey;
+    @apply bg-gray-50;
     @apply w-full h-full;
     grid-row: span 3;
     overflow: hidden;

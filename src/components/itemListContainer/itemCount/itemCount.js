@@ -42,7 +42,6 @@ export const ItemCount = ({stock, initial}) =>{
         <p>{amount}</p>
         <input type="button" value="+" onClick={(e) =>HandleClick (e, {type: 'add'}) } />
       </div>
-      <p className="contador-stock text-center">Stock Restante: {stockRestante}</p>
     </div>
   );
 }

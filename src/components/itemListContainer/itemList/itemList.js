@@ -21,12 +21,12 @@ export const ItemList = () => {
 
   return (
     <div className="container my-4 sm:mb-6">
-      {item.map((product) => (
+      {item.map(({title, price, picture, id}) => (
         <Item
-          title={product.title}
-          price={product.price}
-          picture={product.picture}
-          stock={product.stock}
+          title={title}
+          price={price}
+          picture={picture}
+          id={id}
         />
       ))}
     </div>

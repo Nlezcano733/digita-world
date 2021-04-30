@@ -3,6 +3,7 @@ import React from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { Banner } from "./components/navbar/banner/banner";
 import { ItemListContainer } from "./components/itemListContainer/itemListContainer";
+import { ItemDetailContainer } from './components/itemListContainer/itemDetailContainer/itemDetailContainer';
 import { Footer } from './components/footer/footer'
 
 import "./assets/css/layout-index.css";

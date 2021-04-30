@@ -1,10 +1,18 @@
-import React from "react";
-import { ItemCount } from '../itemCount/itemCount';
+import { useState } from 'react';
+import { ItemDetailContainer } from '../itemDetailContainer/itemDetailContainer'; 
 
 import './item.css';
 
 export const Item = (props) => {
-  console.log(props.picture)
+
+  const [display, SetDisplay] = useState('hidden');
+  const [idGame, setIdGame] = useState('');
+
+  const handleClick = (id) => {
+    SetDisplay('detailContainer');
+    setIdGame(id);
+  }
+
   return (
     <div className="card col-four">
         <div className="img-container">
@@ -12,7 +20,13 @@ export const Item = (props) => {
         </div>
         <h1 className="title">{props.title}</h1>
         <p className="price">{props.price}</p>
-        < ItemCount initial="1" stock={props.stock}/>
+        <input className="py-2 bg-gray-200" type="button" value="Ver más" onClick={()=>{handleClick (props.id)}}/>
+
+        < ItemDetailContainer
+          state={display}
+          id={idGame}
+        />
+
     </div>
   );
 };
