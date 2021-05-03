@@ -1,6 +1,6 @@
 .contador {
     @apply flex justify-around items-center;
-    @apply w-10/12 h-8;
+    @apply w-full h-8;
     @apply mx-auto;
     @apply border-2 border-blue-500 rounded-3xl;
 }
@@ -30,7 +30,7 @@
 
 @screen sm{
   .contador{
-    @apply w-52 h-10;
+    @apply w-10/12 h-full;
     @apply mx-auto;
   }
 
@@ -40,3 +40,12 @@
     cursor: pointer;
   }
 }
+
+/* @screen sm {
+  .contador {
+      @apply flex justify-around items-center;
+      @apply w-10/12 h-8;
+      @apply mx-auto;
+      @apply border-2 border-blue-500 rounded-3xl;
+  }
+} */

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CartWidget } from './cartWidget/cartWidget';
 import { MenuBurger } from './menu-burger/menuBurger'
 import './navbar.css';
@@ -7,7 +8,7 @@ export const NavBar = () => {
     return (
         <div className="sticky top-0 nav">
             <h1 className=" nav-logo">
-                Digital World
+                <Link to='/'>Digital World</Link>
             </h1>
             <div>
                 < MenuBurger />

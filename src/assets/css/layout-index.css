@@ -1,7 +1,0 @@
-.app{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    background-color: #fafafa;
-    @apply dark:bg-night-normal;
-    z-index: -10;
-}

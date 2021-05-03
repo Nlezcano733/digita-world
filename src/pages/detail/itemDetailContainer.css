@@ -1,0 +1,34 @@
+.detailContainer{
+    position: relative;
+    min-height: calc(100vh - 104px);
+    overflow: hidden;
+
+    @apply bg-gray-50;
+}
+
+.detailContainer h1{
+    grid-column: span 12;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    height: fit-content;
+    border-bottom: 1px solid #ccc;
+    @apply font-semibold tracking-wide;
+}
+
+.spinner{
+    @apply text-4xl text-center tracking-wide;
+}
+
+.spinner i{
+    animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+    from{
+        rotate: 0px;
+    }
+    to{
+        rotate: 360px;
+    }
+}
