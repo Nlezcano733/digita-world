@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Route, useParams } from 'react-router-dom';
 
 import { ItemDetail } from '../../components/itemDetail/itemDetail';
-import { ItemRecomendation } from '../../components/itemRecomendation/itemRecomentation';
 import data from '../../products.json';
 
 import './itemDetailContainer.css';
@@ -21,18 +20,18 @@ export const ItemDetailContainer = () => {
 
     useEffect(()=>{
         games (item).then((result) => {
-            if(item == undefined){
-                const filterId = result.filter(game => game.id == gameParam.id)
-                filterId.length != 0 && setItem(filterId[0])
+            if(item === undefined){
+                const filterId = result.filter(game => game.id === gameParam.id)
+                filterId.length !== 0 && setItem(filterId[0])
             }
         }, item);
     });
 
     return (
-        <Route path="/:id">
+        <Route path="/products/:id">
             <div className="detailContainer">
                 <h1 className="mb-3 sm:mb-6">Detalle del producto</h1>
-                {item == undefined 
+                {item === undefined 
                     ? <p className="col-full spinner"><i class="fas fa-spinner"></i></p>
                     :< ItemDetail 
                         picture={item.picture}

@@ -19,6 +19,7 @@ export const ItemList = () => {
     });
   }, []);
 
+
   return (
     <div className="container my-4 sm:mb-6">
       {item.map(({title, price, picture, id}) => (
