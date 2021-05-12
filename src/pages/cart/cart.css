@@ -1,0 +1,16 @@
+.cart{
+    min-height: calc(100vh - 104px);
+    grid-template-rows: 60px auto;
+}
+.cart-title{
+    @apply text-2xl font-bold;
+    padding: 10px 5px;
+}
+
+.btn-empty{
+    justify-self: end;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 20px;
+    margin-top: 10px;
+}

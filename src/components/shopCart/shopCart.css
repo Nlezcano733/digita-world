@@ -1,0 +1,7 @@
+.checkout{
+    @apply bg-gray-50 rounded-xl shadow-lg;
+    @apply h-16 py-3 my-3;
+}
+.checkout-options{
+    @apply flex justify-between items-center;
+}

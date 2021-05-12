@@ -139,7 +139,23 @@
     }
 
     .btn {
+        @apply rounded-3xl;
         padding: 5px 10px;
+    }
+    .btn:active, .btn:focus{
+        outline: none;
+    }
+
+    .btn-close{
+        @apply bg-red-600 hover:bg-red-700 active:bg-red-800 text-white;
+    }
+
+    .btn-open{
+        @apply bg-green-600 hover:bg-green-700 active:bg-green-800 text-white;
+    }
+
+    .btn-submit{
+        @apply bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white;
     }
 
 }

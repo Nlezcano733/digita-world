@@ -24,6 +24,10 @@
     @apply text-white;
     @apply transition-all duration-200;
 }
+
+.nav-enlace:last-child{
+    @apply mr-0;
+}
 .nav-enlace:hover {
     @apply text-olive-light;
 }

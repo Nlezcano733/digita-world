@@ -34,12 +34,7 @@ export const ItemDetailContainer = () => {
                 {item === undefined 
                     ? <p className="col-full spinner"><i class="fas fa-spinner"></i></p>
                     :< ItemDetail 
-                        picture={item.picture}
-                        title={item.title}
-                        description={item.description}
-                        gender={item.gender}
-                        price={item.price}
-                        stock={item.stock}
+                        item={item}
                     />
                 }
             </div>

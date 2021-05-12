@@ -33,15 +33,9 @@
 }
 
 .btn-buy{
-    @apply bg-blue-600 text-white rounded-3xl;
     @apply flex justify-center items-center;
     width: 100%;
-    cursor: pointer;
 }
-
-.btn-buy:hover, .btn-buy:active{
-    @apply bg-blue-700;
-} 
 
 @screen sm{
     .item {
