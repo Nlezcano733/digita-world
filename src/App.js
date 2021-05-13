@@ -8,6 +8,8 @@ import { ItemDetailContainer } from './pages/detail/itemDetailContainer';
 import { Cart } from './pages/cart/cart'; 
 import { Footer } from './components/footer/footer'
 
+import './app.css';
+
 export const App = () => {
   return (
     <CartProvider>

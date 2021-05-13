@@ -6,7 +6,18 @@ export const CartProvider = props =>{
     const [products, setProducts] = useState([]);
 
     function addItems (product, quantity){
-        setProducts([...products, {'name': product, 'quantity': quantity}]);
+        let verif = false;
+        products.forEach((item,)=>{
+            if(item.id === product.id){
+                return verif = true
+            }
+        })
+        if(verif == false){
+            setProducts([...products, {'name': product.title, 'price': product.price, 'id':product.id,'quantity': quantity}]);
+        } else{
+            let itemRepeated = products.find((item) => item.id === product.id);
+            itemRepeated.quantity += quantity;
+        }
     };
 
     function countItems (accum) {
@@ -22,12 +33,8 @@ export const CartProvider = props =>{
         setProducts([]);
     }
 
-    function isInCart (id){
-        //completar funcion
-    }
-
     return (
-    <CartContext.Provider value={[products, addItems, countItems, removeItems, clear, isInCart]}>
+    <CartContext.Provider value={[products, addItems, countItems, removeItems, clear]}>
       {props.children}
     </CartContext.Provider>
   );

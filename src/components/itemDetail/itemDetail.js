@@ -13,7 +13,7 @@ export const ItemDetail = ({item}) => {
     const [amount, setamount] = useState(1);
     const [stockRestante, setStockRestante] = useState(item.stock -1);
 
-    const [products, addItems, countItems, RemoveItems, clear, isInCart] = useContext(CartContext)
+    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext)
 
     const onAdd = (e, {type}) =>{
         if(type == 'add'){
@@ -40,7 +40,6 @@ export const ItemDetail = ({item}) => {
             }
         }
     }
-
     return (
         <div className="container col-full">
             <div className="item col-full sm:col-8">
@@ -49,7 +48,7 @@ export const ItemDetail = ({item}) => {
                 </div>
                 <div className="item-data">
                     <h2 className="data-title">{item.title}</h2>
-                    <h3 className="data-price">{item.price}</h3>
+                    <h3 className="data-price">{`$${item.price}`}</h3>
                 </div>
                 <p className="item-desc">{item.description}</p>
                 <div className="item-buy">
@@ -57,10 +56,7 @@ export const ItemDetail = ({item}) => {
                         onAdd={onAdd} 
                         amount= {amount}
                     />
-                    {/* <button className="btn btn-buy" onClick={()=> {handleClick(item, amount)}}>
-                        <i class="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
-                    </button> */}
-                    <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={()=> {addItems(item.title, amount)}}>
+                    <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={()=> {addItems(item, amount)}}>
                         <i class="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
                     </Link>
                 </div>

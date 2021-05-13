@@ -5,7 +5,7 @@ import { CartContext } from '../../context/cartContext';
 import './navbar.css';
 
 export const NavBar = () => {
-    const [products, addItems, countItems, RemoveItems, clear, isInCart] = useContext(CartContext)
+    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext)
 
     return (
         <div className="sticky top-0 nav">

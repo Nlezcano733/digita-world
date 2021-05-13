@@ -2,7 +2,6 @@
     position: relative;
     min-height: calc(100vh - 104px);
     overflow: hidden;
-
     @apply bg-gray-50;
 }
 

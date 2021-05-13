@@ -14,3 +14,14 @@
     padding: 5px 20px;
     margin-top: 10px;
 }
+
+.checkout-container{
+    max-height: 68vh;
+    @apply flex flex-col justify-start;
+    @apply px-container mb-2 overflow-y-auto;
+}
+
+.cart-price{
+    @apply py-1 px-container mx-container;
+    @apply text-lg text-right font-semibold;
+}

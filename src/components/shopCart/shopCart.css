@@ -1,7 +1,12 @@
 .checkout{
+    width: 100%;
     @apply bg-gray-50 rounded-xl shadow-lg;
-    @apply h-16 py-3 my-3;
+    @apply h-16 px-container py-3 my-3;
 }
 .checkout-options{
     @apply flex justify-between items-center;
+}
+.checkout-total{
+    justify-self: end;
+    @apply flex items-center;
 }

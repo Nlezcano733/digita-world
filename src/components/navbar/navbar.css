@@ -19,6 +19,7 @@
 }
 
 .nav-enlace {
+    @apply flex items-center;
     @apply px-1;
     @apply mx-3 md:mx-4;
     @apply text-white;
