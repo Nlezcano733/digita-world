@@ -1,0 +1,13 @@
+.empty-message{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    @apply text-gray-500 text-center;
+}
+.empty-title{
+    margin-bottom: 10px;
+}
+.empty-link{
+    @apply text-lg text-olive-normal font-semibold hover:text-olive-dark hover:underline;
+}

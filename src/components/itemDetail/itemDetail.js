@@ -57,7 +57,7 @@ export const ItemDetail = ({item}) => {
                         amount= {amount}
                     />
                     <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={()=> {addItems(item, amount)}}>
-                        <i class="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
+                        <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
                     </Link>
                 </div>
             </div>

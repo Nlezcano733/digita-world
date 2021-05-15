@@ -5,7 +5,7 @@ import { CartProvider } from "./context/cartContext";
 import { NavBar } from "./components/navbar/NavBar";
 import { Home } from './pages/home/home';
 import { ItemDetailContainer } from './pages/detail/itemDetailContainer';
-import { Cart } from './pages/cart/cart'; 
+import { CartContainer } from './pages/cart/cartContainer'; 
 import { Footer } from './components/footer/footer'
 
 import './app.css';
@@ -26,7 +26,7 @@ export const App = () => {
           </Route>
 
           <Route path="/cart">
-            <Cart/>
+            <CartContainer/>
           </Route>
 
         </Switch>
