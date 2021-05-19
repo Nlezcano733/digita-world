@@ -1,50 +1,45 @@
 import React from 'react';
-import { useState, useContext, useEffect } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import { ItemCount } from '../itemListContainer/itemCount/itemCount';
 import { RecomendationContainer } from '../recomendationContainer/recomendationContainer';
-import { CartContext } from '../../context/cartContext';
 import './itemDetail.css'
-import { ItemList } from '../itemListContainer/itemList/itemList';
 
-export const ItemDetail = ({item}) => {
+export const ItemDetail = ({item, addItems}) => {
+    let itemStock;
+    item.length === 0 ? itemStock = 2 : itemStock = parseInt(item.stock);
 
     const [amount, setamount] = useState(1);
-    const [stockRestante, setStockRestante] = useState(item.stock -1);
-
-    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext)
+    const [stock, setStock] = useState(itemStock);
+    const [stockRestante, setStockRestante] = useState(itemStock -1);
 
     const onAdd = (e, {type}) =>{
-        if(type == 'add'){
-            if(amount < item.stock){
-                setamount(parseInt(amount) + 1);
-                setStockRestante((stockRestante) - 1);
-                e.target.style.color = "#333333";
-            }
-            if(amount == item.stock -1){
-                e.target.style.color = '#888888';
-                e.target.style.backgroundColor = 'transparent';
-            }
+        if(type == 'add' && amount < stock && stockRestante > 0){
+            setamount(amount + 1);
+            setStockRestante(stockRestante - 1);
         }
 
-        if(type == 'sub'){
-            if(amount > 1){
-                setamount(parseInt(amount) - 1 );
-                setStockRestante((stockRestante) + 1);
-                e.target.style.color = "#333333";
-            }
-            if(amount == item.stock -1){
-                e.target.style.color = '#888888';
-                e.target.style.backgroundColor = 'transparent';
-            }
+        if(type == 'sub' && amount > 1){
+            setamount(amount - 1 );
+            setStockRestante(stockRestante + 1);
         }
     }
+
+    const HandleClick = () =>{
+        addItems(item, amount)
+        if(stockRestante > 0){
+            amount === 1 && setStockRestante(stockRestante - 1);
+            setStock(stockRestante)
+        }
+        setamount(1)
+    }
+
     return (
         <div className="container col-full">
             <div className="item col-full sm:col-8">
                 <div className="item-image">
-                    <img src={`../${item.picture}`} className="h-full mx-auto"/>
+                    <img src={item.picture} className="h-full mx-auto"/>
                 </div>
                 <div className="item-data">
                     <h2 className="data-title">{item.title}</h2>
@@ -55,10 +50,14 @@ export const ItemDetail = ({item}) => {
                     <ItemCount 
                         onAdd={onAdd} 
                         amount= {amount}
+                        stock={stock}
                     />
-                    <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={()=> {addItems(item, amount)}}>
+                    <button className="btn btn-submit btn-buy" onClick={HandleClick}>
                         <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
-                    </Link>
+                    </button>
+                    {/* <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={HandleClick}>
+                        <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
+                    </Link> */}
                 </div>
             </div>
             <RecomendationContainer 

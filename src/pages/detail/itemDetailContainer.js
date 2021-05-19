@@ -1,40 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext  } from 'react';
 import { Route, useParams } from 'react-router-dom';
+import { getFirestore } from '../../firebase/index';
 
 import { ItemDetail } from '../../components/itemDetail/itemDetail';
-import data from '../../products.json';
+import { CartContext } from '../../context/cartContext';
 
 import './itemDetailContainer.css';
 
 export const ItemDetailContainer = () => {
-    const gameParam = useParams()
+    const gameParam = useParams();
+    const [item, setItem] = useState([]);
+    const [isEmpty, setIsEmpty] = useState(false);
 
-    const [item, setItem] = useState();
-    const games = () =>{
-        return new Promise ((response) =>{
-            setTimeout(() =>{
-                return response(data);
-            },2000);
-        });
-    };
+    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext)
 
     useEffect(()=>{
-        games (item).then((result) => {
-            if(item === undefined){
-                const filterId = result.filter(game => game.id === gameParam.id)
-                filterId.length !== 0 && setItem(filterId[0])
+        const db = getFirestore();
+        const itemCollection = db.collection("item")
+        itemCollection.get().then( querySnapshot =>{
+            if(querySnapshot.size === 0){
+            setIsEmpty(true)
             }
-        }, item);
-    });
+            const filterId = querySnapshot.docs.filter(game => game.id === gameParam.id)
+
+            const id = filterId[0].id
+            filterId.length !== 0 && setItem({...filterId[0].data(), id})
+        }
+        ).catch(err => console.log(err))
+    }, [])
 
     return (
         <Route path="/products/:id">
             <div className="detailContainer">
                 <h1 className="mb-3 sm:mb-6">Detalle del producto</h1>
-                {item === undefined 
+                {isEmpty 
                     ? <p className="col-full spinner"><i class="fas fa-spinner"></i></p>
                     :< ItemDetail 
                         item={item}
+                        addItems={addItems}
                     />
                 }
             </div>

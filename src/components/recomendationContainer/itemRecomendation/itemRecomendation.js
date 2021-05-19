@@ -7,7 +7,7 @@ export const ItemRecomendation = ({title, picture, id}) =>{
     return (
         <div className="itemRecomendation">
             <div className="item-logo">
-                <img src={`../${picture}`} />
+                <img src={picture} />
             </div>
             <h2 className="item-title">{title}</h2>
             <Link to={`/products/${id}`} className="btn btn-submit btn-buy mx-auto">Ver más</Link>

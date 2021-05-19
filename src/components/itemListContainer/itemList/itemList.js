@@ -1,35 +1,37 @@
 import { Item } from "../item/item";
-import data from "../../../products.json";
 import { useEffect, useState } from "react";
+import { getFirestore } from '../../../firebase/index';
 
 export const ItemList = () => {
   const [item, setItem] = useState([]);
+  const [isEmpty, setIsEmpty] = useState(false)
 
-  const getGames = (data) => {
-    return new Promise((res) => {
-      setTimeout(() => {
-        return res(data);
-      }, 2000);
-    });
-  };
-
-  useEffect(() => {
-    getGames(data).then((result) => {
-      setItem(result);
-    });
-  }, []);
-
+  useEffect(()=>{
+    const db = getFirestore();
+    const itemCollection = db.collection("item")
+    itemCollection.get().then( querySnapshot =>{
+        if(querySnapshot.size === 0){
+          setIsEmpty(true)
+        }
+        const data = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}))
+        setItem(data)
+      }
+    ).catch(err => console.log(err))
+  }, [])
 
   return (
     <div className="container my-4 sm:mb-6">
-      {item.map(({title, price, picture, id}) => (
+      { isEmpty ?
+      ( <p>Aguarde unos instantes...</p>
+      ):(item.map(({title, price, picture, id}) => (
         <Item
           title={title}
           price={price}
           picture={picture}
           id={id}
         />
-      ))}
+      ))
+      )}
     </div>
   );
 };
