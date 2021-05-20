@@ -1,0 +1,26 @@
+.category{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-row-gap: 15px;
+}
+.category-link{
+    width: 100%;
+    height: 80px;
+    @apply flex justify-center items-center;
+    color: white;
+    box-shadow: 0px 0px 10px #ccc;
+    cursor: pointer;
+}
+
+.category-link:nth-child(2){
+    @apply bg-gradient-to-l from-red-500 to-red-700;
+}
+.category-link:nth-child(3){
+    @apply bg-gradient-to-l from-green-500 to-green-700;
+}
+.category-link:nth-child(4){
+    @apply bg-gradient-to-l from-purple-500 to-purple-700;
+}
+.category-link:last-child{
+    @apply bg-gradient-to-l from-yellow-500 to-yellow-700;
+}

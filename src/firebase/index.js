@@ -2,14 +2,13 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyAxfiw_IBPWrgKg93wSGDp0sj6B81nTR8I",
-    authDomain: "digitalworld-ecommerce.firebaseapp.com",
-    projectId: "digitalworld-ecommerce",
-    storageBucket: "digitalworld-ecommerce.appspot.com",
-    messagingSenderId: "466455624582",
-    appId: "1:466455624582:web:29351228a5f3a48b434a07",
-    measurementId: "G-4748ZBN4D7"
-});
+    apiKey: "AIzaSyA1iVaHPsYupwz6vSUlxp3R5SnFyTdgjLE",
+    authDomain: "ecommerce-beta-f3cc2.firebaseapp.com",
+    projectId: "ecommerce-beta-f3cc2",
+    storageBucket: "ecommerce-beta-f3cc2.appspot.com",
+    messagingSenderId: "662879151318",
+    appId: "1:662879151318:web:e5a318015abece6a55d577"
+  });
 
 export const getFirebase = () => app
 

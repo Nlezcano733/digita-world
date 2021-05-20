@@ -8,7 +8,7 @@ import { EmptyCart } from '../../components/cartDetail/emptyCart/emptyCart';
 import './cartContainer.css';
 
 export const CartContainer = () =>{
-    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext)
+    const [products, addItems, countStock, countItems, RemoveItems, clear] = useContext(CartContext)
 
     return (
         <Route path="/cart">

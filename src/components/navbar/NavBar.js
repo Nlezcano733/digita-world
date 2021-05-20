@@ -15,7 +15,7 @@ export const NavBar = () => {
             <div>
                 < MenuBurger />
                 <nav className="nav-menu">
-                    <a className=" nav-enlace " href="">Contacto</a>
+                    <Link to={`/products/all`} className="nav-enlace">Catálogo</Link>
                     <Link to={`/cart`} className="nav-enlace">
                         <i className="fas fa-shopping-cart text-2xl mr-2"></i>
                         {products.length > 0

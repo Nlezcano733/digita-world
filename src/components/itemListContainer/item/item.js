@@ -12,7 +12,7 @@ export const Item = ({picture, title, price, id}) => {
         </div>
         <h1 className="title">{title}</h1>
         <p className="price">{`$${price}`}</p>
-        < Link to={`/products/${id}`} className="py-2 bg-gray-200 text-center">Ver más</Link>
+        < Link to={`/detail/${id}`} className="py-2 bg-gray-200 text-center">Ver más</Link>
     </div>
   );
 };

@@ -1,18 +1,14 @@
 import React from 'react';
 import { useState} from 'react';
-import { Link } from 'react-router-dom';
 
 import { ItemCount } from '../itemListContainer/itemCount/itemCount';
 import { RecomendationContainer } from '../recomendationContainer/recomendationContainer';
 import './itemDetail.css'
 
-export const ItemDetail = ({item, addItems}) => {
-    let itemStock;
-    item.length === 0 ? itemStock = 2 : itemStock = parseInt(item.stock);
-
+export const ItemDetail = ({item, stock, setStock, addItems}) => {
     const [amount, setamount] = useState(1);
-    const [stock, setStock] = useState(itemStock);
-    const [stockRestante, setStockRestante] = useState(itemStock -1);
+    const [stockRestante, setStockRestante] = useState(stock - 1);
+
 
     const onAdd = (e, {type}) =>{
         if(type == 'add' && amount < stock && stockRestante > 0){
@@ -55,9 +51,6 @@ export const ItemDetail = ({item, addItems}) => {
                     <button className="btn btn-submit btn-buy" onClick={HandleClick}>
                         <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
                     </button>
-                    {/* <Link to={`/cart`} className="btn btn-submit btn-buy" onClick={HandleClick}>
-                        <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
-                    </Link> */}
                 </div>
             </div>
             <RecomendationContainer 

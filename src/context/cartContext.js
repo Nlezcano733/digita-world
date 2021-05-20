@@ -20,8 +20,6 @@ export const CartProvider = props =>{
         }
     };
 
-    
-
     function countItems (accum) {
         return products.reduce((accum, item) => (accum += item.quantity), 0)
     }
@@ -36,8 +34,8 @@ export const CartProvider = props =>{
     }
     
     return (
-    <CartContext.Provider value={[products, addItems, countItems, removeItems, clear]}>
-      {props.children}
-    </CartContext.Provider>
-  );
+        <CartContext.Provider value={[products, addItems, countItems, removeItems, clear]}>
+        {props.children}
+        </CartContext.Provider>
+    );
 }; 

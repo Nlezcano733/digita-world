@@ -11,7 +11,7 @@ export const ShopCart = ({name, price, id, quantity, removeItems, totalPrice}) =
             <div className="col-4 checkout-options">
                 <p className="mr-2">{`cantidad: ${quantity}`}</p>
                 <div className="inline-block">
-                    <Link to={`/products/${id}`} className="btn btn-open">
+                    <Link to={`/detail/${id}`} className="btn btn-open">
                         Agregar
                     </Link>
                     <button className="btn btn-close ml-2" onClick={()=>{removeItems({id})}}>

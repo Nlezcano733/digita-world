@@ -1,13 +1,13 @@
-.item-container{
+.itemContainer{
     @apply bg-gray-50;
 }
 
-.item-container__title{
+.itemContainer-title{
     @apply my-5 text-xl text-center;
 }
 
 @screen sm {
-    .item-container__title{
+    .itemContainer-title{
         @apply my-6 text-2xl;
     }
 }
