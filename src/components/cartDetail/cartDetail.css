@@ -17,7 +17,20 @@
     @apply px-container mb-2 overflow-y-auto;
 }
 
-.cart-price{
-    @apply py-1 px-container mx-container;
-    @apply text-lg text-right font-semibold;
+.buy-keep{
+    width: fit-content;
+    grid-column-start: -8;
+    grid-column-end: -5;
+    justify-self: end;
+}
+
+.buy-btn{
+    width: fit-content;
+    grid-column: span 2;
+}
+
+.buy-price{
+    @apply py-1 pl-5 mx-0 px-0;
+    grid-column: span 2;
+    @apply text-lg text-left font-semibold;
 }

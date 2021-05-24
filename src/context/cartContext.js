@@ -13,7 +13,7 @@ export const CartProvider = props =>{
             }
         })
         if(verif == false){
-            setProducts([...products, {'name': product.title, 'price': product.price, 'id':product.id,'quantity': quantity}]);
+            setProducts([...products, {'id': product.id, 'name': product.title, 'price': product.price, 'id':product.id,'quantity': quantity}]);
         } else{
             let itemRepeated = products.find((item) => item.id === product.id);
             itemRepeated.quantity += quantity;

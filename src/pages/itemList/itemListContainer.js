@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { ItemList } from './itemList/itemList';
+import { ItemList } from '../../components/itemList/itemList';
 import './itemListContainer.css';
 
 export const ItemListContainer = () =>{

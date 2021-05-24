@@ -33,7 +33,7 @@ export const ItemCount = ({onAdd, amount, stock}) =>{
           className="btnCount btnEnabled" 
           ref={btnSub} 
           value="-" 
-          onClick={(e)=>{onAdd (e, {type: 'sub'})}} 
+          onClick={e =>{onAdd (e, {type: 'sub'})}} 
         />
 
         <p>{amount}</p>
@@ -43,7 +43,7 @@ export const ItemCount = ({onAdd, amount, stock}) =>{
           className="btnCount btnEnabled" 
           ref={btnAdd} 
           value="+" 
-          onClick={(e)=>{onAdd (e, {type: 'add'})}}
+          onClick={e=>{onAdd (e, {type: 'add'})}}
         />
 
       </div>

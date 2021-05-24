@@ -10,7 +10,7 @@ export const ItemRecomendation = ({title, picture, id}) =>{
                 <img src={picture} />
             </div>
             <h2 className="item-title">{title}</h2>
-            <Link to={`/products/${id}`} className="btn btn-submit btn-buy mx-auto">Ver más</Link>
+            <Link to={`/detail/${id}`} className="btn btn-submit btn-buy mx-auto">Ver más</Link>
         </div>
     )
 }

@@ -1,27 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext} from '../../context/productContext';
+import { ProductContext } from '../../context/productContext';
 
 import './categoriesContainer.css';
 
 export const CategoriesContainer = () =>{
-    const categories = useContext(ProductContext)
-
-    let catName = categories.map(name=>{
-        let catAlt = name.charAt(0);
-        return `${catAlt.toUpperCase()}${name.slice(1)}`;
-    })
+    const [data, getCategories, getGame, updateItems] = useContext(ProductContext)
+    let categoryName = getCategories();
     
     return (
         <div className="category container">
             <h2 className="col-full text-2xl text-center">Categorias</h2>
-            {categories.length > 1
-                ? catName.map(item => (
-                    <Link className="category-link col-four"to={`/products/${item.toLocaleLowerCase()}`}>
+            {categoryName !== undefined
+                ? categoryName.map(item => (
+                    <Link to={`/products/${item}`} className="category-link col-four"> 
                         {item}
                     </Link>
                 ))
-                :<p>Aguarde unos segundos</p>
+                :<p className="col-full">Aguarde unos segundos</p>
             }
         </div>
     )

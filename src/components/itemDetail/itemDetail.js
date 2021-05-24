@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState} from 'react';
 
-import { ItemCount } from '../itemListContainer/itemCount/itemCount';
+import { ItemCount } from './itemCount/itemCount';
 import { RecomendationContainer } from '../recomendationContainer/recomendationContainer';
 import './itemDetail.css'
 

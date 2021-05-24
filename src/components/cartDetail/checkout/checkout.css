@@ -1,0 +1,35 @@
+.check{
+    position: relative;
+    width: 45%;
+    @apply ml-auto mr-container my-5 py-5;
+    @apply border-t border-gray-300;
+}
+
+.check-title{
+    @apply text-xl mb-2;
+}
+
+.check-exit{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.check-label{
+    display: block;
+    @apply font-semibold;
+}
+
+.check-input{
+    display: block;
+    width: 500px;
+    @apply py-1 px-3 mb-2;
+    @apply border-2 rounded-lg border-blue-400 focus:border-blue-600;
+}
+
+.check-input:hover{ @apply shadow-lg }
+.check-input:active, .check-input:focus{ outline: none }
+
+.required-false{
+    @apply border-2 rounded-lg border-red-400 focus:border-red-600;
+}

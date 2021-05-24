@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ItemRecomendation } from './itemRecomendation/itemRecomendation';
-import { getFirestore } from '../../firebase/index';
+import { ProductContext } from '../../context/productContext';
 
 
 export const RecomendationContainer = ({title, gender}) =>{
-
+    const [data, getCategories, getGames] = useContext(ProductContext);
     const [gameGender, setGameGender] = useState();
 
+    const filterRecomendation = data.filter(items => items.gender === gender && items.title != title)
+
     useEffect(()=>{
-        const db = getFirestore();
-        const itemCollection = db.collection("item");
-        itemCollection.get().then(querySnapshot =>{
-            const filterGame = querySnapshot.docs.filter(items => items.data().gender === gender && items.data().title != title);
-            let gamesData = filterGame.map((item) => ({...item.data(), id: item.id}))
-            filterGame.length !== 0 && setGameGender(gamesData);
-        })
-    })
+        filterRecomendation != 0 && setGameGender(filterRecomendation)
+    }, filterRecomendation)
 
     return (
         <div className="col-full lg:col-4 h-52 lg:h-full bg-gray-100 p-2">

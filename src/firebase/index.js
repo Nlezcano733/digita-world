@@ -8,7 +8,7 @@ const app = firebase.initializeApp({
     storageBucket: "ecommerce-beta-f3cc2.appspot.com",
     messagingSenderId: "662879151318",
     appId: "1:662879151318:web:e5a318015abece6a55d577"
-  });
+});
 
 export const getFirebase = () => app
 

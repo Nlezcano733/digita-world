@@ -7,7 +7,7 @@ export const EmptyCart = () => {
     return(
         <div className="empty-message">
             <h2 className="empty-title"><i className="fas fa-exclamation-triangle"></i> Usted no posee elementos en el carrito</h2>
-            <Link to={`/`} className="empty-link">Volver a inicio</Link>
+            <Link to={`/products/all`} className="empty-link">Visitá nuesto catálogo</Link>
         </div>
     )
 }

@@ -6,12 +6,11 @@ import { ProductProvider } from "./context/productContext";
 import { NavBar } from "./components/navbar/NavBar";
 import { Home } from './pages/home/home';
 import { ItemDetailContainer } from './pages/detail/itemDetailContainer';
-import { ItemListContainer } from "./components/itemListContainer/itemListContainer";
+import { ItemListContainer } from "./pages/itemList/itemListContainer";
 import { CartContainer } from './pages/cart/cartContainer'; 
-import { Footer } from './components/footer/footer'
+import { Footer } from './components/footer/footer';
 
 import './app.css';
-import { Item } from "./components/itemListContainer/item/item";
 
 export const App = () => {
   return (
