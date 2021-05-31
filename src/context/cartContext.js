@@ -4,6 +4,7 @@ export const CartContext = React.createContext([]);
 
 export const CartProvider = props =>{
     const [products, setProducts] = useState([]);
+    const [totalItems, setTotalItems] = useState()
 
     function addItems (product, quantity){
         let verif = false;
@@ -20,8 +21,9 @@ export const CartProvider = props =>{
         }
     };
 
-    function countItems (accum) {
-        return products.reduce((accum, item) => (accum += item.quantity), 0)
+    function countItems () {
+        let total = products.reduce((accum, item) => (accum += item.quantity), 0)
+        setTotalItems(total)
     }
 
     function removeItems (id) {
@@ -34,7 +36,7 @@ export const CartProvider = props =>{
     }
     
     return (
-        <CartContext.Provider value={[products, addItems, countItems, removeItems, clear]}>
+        <CartContext.Provider value={[products, addItems, countItems, removeItems, clear, totalItems]}>
         {props.children}
         </CartContext.Provider>
     );

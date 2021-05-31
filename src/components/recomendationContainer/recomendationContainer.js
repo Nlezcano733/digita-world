@@ -3,15 +3,22 @@ import { ItemRecomendation } from './itemRecomendation/itemRecomendation';
 import { ProductContext } from '../../context/productContext';
 
 
-export const RecomendationContainer = ({title, gender}) =>{
-    const [data, getCategories, getGames] = useContext(ProductContext);
+export const RecomendationContainer = ({item, setAmount, setStock, setStockRestante}) =>{
+    const [data, getCategories, getGame, updateItems] = useContext(ProductContext);
     const [gameGender, setGameGender] = useState();
 
-    const filterRecomendation = data.filter(items => items.gender === gender && items.title != title)
+    const filterRecomendation = data.filter(product => product.gender === item.gender && product.title != item.title);
 
     useEffect(()=>{
-        filterRecomendation != 0 && setGameGender(filterRecomendation)
+        filterRecomendation != 0 && setGameGender(filterRecomendation);
     }, filterRecomendation)
+
+    const HandleClick = (id) =>{
+        let game = getGame(id)
+        setStock(game.stock);
+        setStockRestante(game.stock - 1);
+        setAmount(1);
+    }
 
     return (
         <div className="col-full lg:col-4 h-52 lg:h-full bg-gray-100 p-2">
@@ -22,6 +29,7 @@ export const RecomendationContainer = ({title, gender}) =>{
                         title={title}
                         picture={picture}
                         id={id}
+                        HandleClick={HandleClick}
                     />
                 ))
             }

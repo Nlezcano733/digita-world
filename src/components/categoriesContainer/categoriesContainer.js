@@ -9,11 +9,11 @@ export const CategoriesContainer = () =>{
     let categoryName = getCategories();
     
     return (
-        <div className="category container">
+        <div className="category container gap-y-3">
             <h2 className="col-full text-2xl text-center">Categorias</h2>
             {categoryName !== undefined
                 ? categoryName.map(item => (
-                    <Link to={`/products/${item}`} className="category-link col-four"> 
+                    <Link to={`/products/${item}`} className="category-link col-four" id={`cat-${item}`}> 
                         {item}
                     </Link>
                 ))

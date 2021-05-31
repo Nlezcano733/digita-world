@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { ProductContext } from "../../context/productContext";
 import { ItemList } from '../../components/itemList/itemList';
+import { ItemCategories } from '../../components/itemList/itemCategories/itemCategories';
 import './itemListContainer.css';
 
 export const ItemListContainer = () =>{
-    let param = useParams();
-    const category = param.category
+    let {category} = useParams();
+    const [data, getCategories, getGames, updateItems] = useContext(ProductContext);
+    
+    let categoryList = getCategories();
+    if(category !== 'all'){
+        let catFilter = categoryList.filter(itemCat => itemCat !== category);
+        categoryList = ['all', ...catFilter]
+    }
 
     return (
         <div className="itemContainer">
@@ -14,7 +22,13 @@ export const ItemListContainer = () =>{
                     Busca tus juegos favoritos: {category === 'all' ? 'todos' :category}
                 </h2>
             </div>
-            < ItemList category={category}/>
+            < ItemList
+                category={category}
+                data={data}
+            />
+            <ItemCategories 
+                categoryList={categoryList}
+            />
         </div>
     )
 }

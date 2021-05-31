@@ -13,12 +13,13 @@ import './cartDetail.css';
 
 export const CartDetail = () =>{
     const [data, getCategories, getGame, updateItems] = useContext(ProductContext);
-    const [products, addItems, countItems, RemoveItems, clear] = useContext(CartContext);
+    const [products, addItems, countItems, RemoveItems, clear, totalItems] = useContext(CartContext);
     const [visibility, setVisibility] = useState(false);
     const [userInfo, setUserInfo] = useState();
     const [orderId, setOrderId] = useState();
     const [error] = useState();
 
+    countItems();
     const db = getFirestore();
     const handleClick = () =>{
         setVisibility(true);
@@ -60,7 +61,7 @@ export const CartDetail = () =>{
     return (
         <div>
             <div className="container border-b border-gray-200">
-                <h1 className="col-8 cart-title">{`Tu carrito (${countItems()})`}</h1>
+                <h1 className="col-8 cart-title">{`Tu carrito (${totalItems})`}</h1>
                 <button className="btn btn-close btn-empty col-4" onClick={clear}>Vaciar carrito</button>
             </div>
             <div className="checkout-container">

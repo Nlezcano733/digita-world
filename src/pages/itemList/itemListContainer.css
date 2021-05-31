@@ -1,5 +1,6 @@
 .itemContainer{
     @apply bg-gray-50;
+    min-height: calc(100vh - 128px);
 }
 
 .itemContainer-title{

@@ -24,13 +24,12 @@ export const ProductProvider = props =>{
         return categories
     }
 
-    function getGame ({id}){
+    function getGame (id){
         let game = data.filter(item => item.id === id);
         return game[0];
     }
 
     async function updateItems (items){
-        console.log(items)
         const db = getFirestore();
         const itemsToUpdate = db.collection('item')
             .where(firebase.firestore.FieldPath.documentId(), 'in', items.map(i => i.id));

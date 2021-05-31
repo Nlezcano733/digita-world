@@ -1,22 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../../context/productContext";
+import React, { useEffect, useState } from "react";
 import { Item } from "./item/item";
 
-export const ItemList = ({ category }) => {
-  const [data, getCategories, getGames, updateItems] = useContext(ProductContext);
+export const ItemList = ({ category, data }) => {
   const [item, setItem] = useState([]);
 
   useEffect(()=>{
-    category === "all"
-      ? setItem(data)
-      : setItem(data.filter(cat => cat.gender === category));
-  }, data)
+    category !== "all"
+    ? setItem(data.filter(cat => cat.gender === category))
+    : setItem(data);
+  }, [])
 
   return (
     <div className="container my-4 sm:mb-6">
-      {item.length === 0 
-      ? <p>Aguarde unos instantes...</p>
-      : (
+      {item.length === 0 ? (
+        <p className="col-full">Aguarde unos instantes...</p>
+      ) : (
         item.map(({ title, price, picture, id }) => (
           <Item title={title} price={price} picture={picture} id={id} />
         ))
