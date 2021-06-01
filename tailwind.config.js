@@ -1,8 +1,31 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: 'class', // or 'media' or 'class'
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: 'class',
   corePlugins: {
     container: false,
+    float: false,
+    clear: false,
+    position: false,
+    inset: false,
+    mixBlendMode: false,
+    backgroundBlendMode: false,
+    filter: false,
+    blur: false,
+    brightness: false,
+    contrast: false,
+    grayscale: false,
+    hueRotate: false,
+    invert: false,
+    saturate: false,
+    sepia: false,
+    transitionProperty: false,
+    transitionDuration: false,
+    transitionTimingFunction: false,
+    transitionDelay: false,
+    Animation: false,
+    transform: false
   },
   theme: {
     screens: {
@@ -10,6 +33,18 @@ module.exports = {
       'md': '700px',
       'lg': '900px',
       'xl': '1200px',
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.coolGray,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.green,
+      blue: colors.blue,
+      purple: colors.purple,
     },
     extend: {
       spacing:{
@@ -25,14 +60,7 @@ module.exports = {
           light: '#b5d974',
           normal: '#98ca3f',
           dark: '#729a2b',
-          darker: '#4b651c',
-        },
-        night:{
-          lighter: '#273a47',
-          light: '#21313c',
-          normal: '#1b2831',
-          dark: '#0f161b',
-          darker: '#090d10',
+          darker: '#4b651c'
         }
       },
       boxShadow: {

@@ -12,7 +12,7 @@ import { Checkout } from './checkout/checkout';
 import './cartDetail.css';
 
 export const CartDetail = () =>{
-    const [data, getCategories, getGame, updateItems] = useContext(ProductContext);
+    const [data, item, getCategories, getList, getGame, updateItems] = useContext(ProductContext);
     const [products, addItems, countItems, RemoveItems, clear, totalItems] = useContext(CartContext);
     const [visibility, setVisibility] = useState(false);
     const [userInfo, setUserInfo] = useState();

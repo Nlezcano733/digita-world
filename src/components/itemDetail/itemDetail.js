@@ -6,8 +6,8 @@ import { ItemCount } from './itemCount/itemCount';
 import { RecomendationContainer } from '../recomendationContainer/recomendationContainer';
 import './itemDetail.css'
 
-export const ItemDetail = ({item}) => {
-    const [stock, setStock] = useState(item.stock)
+export const ItemDetail = ({game}) => {
+    const [stock, setStock] = useState(game.stock)
     const [amount, setAmount] = useState(1)
     const [stockRestante, setStockRestante] = useState(stock - 1);
     const [products, addItems, countItems, RemoveItems, clear, totalItems] = useContext(CartContext);
@@ -25,12 +25,12 @@ export const ItemDetail = ({item}) => {
     }
 
     useEffect(()=>{
-        setStock(item.stock)
-        setStockRestante(item.stock - 1)
-    }, item)
+        setStock(game.stock)
+        setStockRestante(game.stock - 1)
+    }, game)
 
     const HandleClick = () =>{
-        addItems(item, amount);
+        addItems(game, amount);
         countItems();
         if(stockRestante > 0){
             amount === 1 && setStockRestante(stockRestante - 1);
@@ -43,13 +43,13 @@ export const ItemDetail = ({item}) => {
         <div className="container col-full">
             <div className="item col-full sm:col-8">
                 <div className="item-image">
-                    <img src={item.picture} className="h-full mx-auto"/>
+                    <img src={game.picture} className="h-full mx-auto"/>
                 </div>
                 <div className="item-data">
-                    <h2 className="data-title">{item.title}</h2>
-                    <h3 className="data-price">{`$${item.price}`}</h3>
+                    <h2 className="data-title">{game.title}</h2>
+                    <h3 className="data-price">{`$${game.price}`}</h3>
                 </div>
-                <p className="item-desc">{item.description}</p>
+                <p className="item-desc">{game.description}</p>
                 <div className="item-buy">
                     <ItemCount 
                         onAdd={onAdd} 
@@ -59,11 +59,10 @@ export const ItemDetail = ({item}) => {
                     <button className="btn btn-submit btn-buy" onClick={HandleClick}>
                         <i className="fas fa-plus-circle mr-2"></i>añadir&nbsp;<span className="hidden sm:inline"> al carrito</span>
                     </button>
-                    <p>stock disponible: {stock}</p>
                 </div>
             </div>
             <RecomendationContainer 
-                item={item}
+                game={game}
                 setAmount={setAmount}
                 setStock={setStock}
                 setStockRestante={setStockRestante}

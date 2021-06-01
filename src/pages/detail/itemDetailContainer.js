@@ -9,7 +9,7 @@ import './itemDetailContainer.css';
 export const ItemDetailContainer = () => {
     const gameParam = useParams();
     const [stock, setStock] = useState();
-    const [data, getCategories, getGame, updateItems] = useContext(ProductContext);
+    const [data, item, getCategories, getList, getGame, updateItems] = useContext(ProductContext);
 
     let game = getGame(gameParam.id);
     useEffect(()=>{
@@ -23,7 +23,7 @@ export const ItemDetailContainer = () => {
             <h1 className="mb-3 sm:mb-6">Detalle del producto</h1>
             {stock > 1 
                 ?< ItemDetail 
-                    item={game}
+                    game={game}
                 />
                 : <p className="col-full spinner"><i className="fas fa-spinner"></i></p>
             }

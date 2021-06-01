@@ -9,10 +9,11 @@ export const ItemCount = ({onAdd, amount, stock}) =>{
     const nodeBtn = [btnAdd.current, btnSub.current];
   
     const colorVerif = () => {
+        btnAdd.current.className = "btnCount btnEnabled";
         if (amount === 1) {
-        btnSub.current.className = "btnCount btnDisabled";
+        btnSub.current.className = "btnCount btndisabled";
         } else if (amount === stock) {
-        btnAdd.current.className = "btnCount btnDisabled";
+        btnAdd.current.className = "btnCount btndisabled";
         } else {
         nodeBtn.forEach((item) => {
             item.className = "btnCount btnEnabled";

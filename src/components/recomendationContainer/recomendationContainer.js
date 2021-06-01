@@ -3,11 +3,11 @@ import { ItemRecomendation } from './itemRecomendation/itemRecomendation';
 import { ProductContext } from '../../context/productContext';
 
 
-export const RecomendationContainer = ({item, setAmount, setStock, setStockRestante}) =>{
-    const [data, getCategories, getGame, updateItems] = useContext(ProductContext);
+export const RecomendationContainer = ({game, setAmount, setStock, setStockRestante}) =>{
+    const [data, item, getCategories, getList, getGame, updateItems] = useContext(ProductContext);
     const [gameGender, setGameGender] = useState();
 
-    const filterRecomendation = data.filter(product => product.gender === item.gender && product.title != item.title);
+    const filterRecomendation = data.filter(product => product.gender === game.gender && product.title != game.title);
 
     useEffect(()=>{
         filterRecomendation != 0 && setGameGender(filterRecomendation);

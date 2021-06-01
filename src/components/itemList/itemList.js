@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Item } from "./item/item";
 
-export const ItemList = ({ category, data }) => {
-  const [item, setItem] = useState([]);
-
-  useEffect(()=>{
-    category !== "all"
-    ? setItem(data.filter(cat => cat.gender === category))
-    : setItem(data);
-  }, [])
+export const ItemList = ({ item }) => {
 
   return (
     <div className="container my-4 sm:mb-6">

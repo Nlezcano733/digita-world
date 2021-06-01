@@ -1,5 +1,4 @@
 import React from 'react';
-import { Banner } from "../../components/banner/banner";
 import { CategoriesContainer } from '../../components/categoriesContainer/categoriesContainer'
 
 import './home.css';
@@ -7,7 +6,11 @@ import './home.css';
 export const Home = () =>{
     return (
         <div className="home">
-        <Banner greeting="Los mejores juegos, todas las plataformas, un solo lugar." />
+        <div className="banner">
+            <p className="description">
+                Los mejores juegos, todas las plataformas, un solo lugar.
+            </p>
+        </div>
         <CategoriesContainer />
         </div>
     );

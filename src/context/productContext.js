@@ -6,6 +6,7 @@ export const ProductContext = React.createContext([]);
 
 export const ProductProvider = props =>{
     const [data, setData] = useState([]);
+    const [item, setItem] = useState([]);
     const [categories, setCategories] = useState([]);
 
     useEffect(()=>{
@@ -22,6 +23,12 @@ export const ProductProvider = props =>{
         let gender = data.map(item => item.gender);
         gender.forEach(item => !categories.includes(item) && setCategories([...categories, item]));
         return categories
+    }
+
+    function getList (category) {
+        (category !== "Todos" && category !== 'all')
+        ? setItem(data.filter(cat => cat.gender === category))
+        : setItem(data);
     }
 
     function getGame (id){
@@ -52,7 +59,7 @@ export const ProductProvider = props =>{
     }
 
     return (
-        <ProductContext.Provider value={[data, getCategories, getGame, updateItems]}>
+        <ProductContext.Provider value={[data, item, getCategories, getList, getGame, updateItems]}>
         {props.children}
         </ProductContext.Provider>
     );

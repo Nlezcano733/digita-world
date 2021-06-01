@@ -2,8 +2,25 @@ footer{
     @apply h-10;
     @apply text-center;
     @apply bg-blue-500 text-white;
+    position: relative;
 }
 
 .footer-info{
     padding-top: 10px;
+}
+
+.network{
+    position: absolute;
+    top: 20%;
+    right: 65px;
+    width: 50px;
+    @apply flex justify-between items-center;
+}
+
+.network a{
+    font-size: 18px;
+    transition: all 200ms linear;
+}
+.network a:hover{
+    @apply text-olive-normal;
 }

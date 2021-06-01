@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import { ProductContext } from "../../context/productContext";
 import { ItemList } from '../../components/itemList/itemList';
@@ -7,7 +7,7 @@ import './itemListContainer.css';
 
 export const ItemListContainer = () =>{
     let {category} = useParams();
-    const [data, getCategories, getGames, updateItems] = useContext(ProductContext);
+    const [data, item, getCategories, getList, getGame, updateItems] = useContext(ProductContext);
     
     let categoryList = getCategories();
     if(category !== 'all'){
@@ -23,10 +23,10 @@ export const ItemListContainer = () =>{
                 </h2>
             </div>
             < ItemList
-                category={category}
-                data={data}
+                item={item}
             />
             <ItemCategories 
+                getList={getList}
                 categoryList={categoryList}
             />
         </div>
