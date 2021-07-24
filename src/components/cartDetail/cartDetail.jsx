@@ -6,6 +6,7 @@ import { getFirestore } from '../../firebase/index';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 import { ProductContext } from '../../context/productContext';
+
 import { ShopCart } from './shopCart/shopCart';
 import { Checkout } from './checkout/checkout';
 
@@ -55,6 +56,7 @@ export const CartDetail = () =>{
             })
             .catch(err => console.log(err))
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, userInfo)
 
 

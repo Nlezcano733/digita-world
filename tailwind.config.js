@@ -1,31 +1,11 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  mode: 'jit',
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: 'class',
   corePlugins: {
-    container: false,
-    float: false,
-    clear: false,
-    position: false,
-    inset: false,
-    mixBlendMode: false,
-    backgroundBlendMode: false,
-    filter: false,
-    blur: false,
-    brightness: false,
-    contrast: false,
-    grayscale: false,
-    hueRotate: false,
-    invert: false,
-    saturate: false,
-    sepia: false,
-    transitionProperty: false,
-    transitionDuration: false,
-    transitionTimingFunction: false,
-    transitionDelay: false,
-    Animation: false,
-    transform: false
+    container: false
   },
   theme: {
     screens: {
