@@ -17,6 +17,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "react-build": "react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "build-css": "tailwind build src/tailwind/tailwind.css -o src/assets/css/framework.css",
